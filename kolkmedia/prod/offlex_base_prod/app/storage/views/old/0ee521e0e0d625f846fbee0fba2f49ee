@@ -1,0 +1,17 @@
+<script type="application/ld+json">
+    {
+        "@context":"http://schema.org",
+        "@type":"EmailMessage",
+        "description":"View your <?php echo $entityType; ?>",
+        "action": {
+            "@type": "ViewAction",
+            "url": "<?php echo e($link); ?>",
+            "name": "View <?php echo $entityType; ?>"
+        },        
+        "publisher": {
+            "@type": "Organization",
+            "name": "Offlex",
+            "url": "<?php echo e(OFFLEX_WEB_URL); ?>"
+        }
+    }
+</script>

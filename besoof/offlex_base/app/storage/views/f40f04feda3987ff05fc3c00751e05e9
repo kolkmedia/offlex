@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php echo $__env->yieldContent('head'); ?>
+</head>
+
+<body class="fixed-header">
+
+<?php if (Auth::check() && Request::path() != 'user/reset'): ?>
+
+    <?php if (!isset($viewPage)): ?>
+        <?php echo $__env->yieldContent('navigation'); ?>
+    <?php endif; ?>
+
+    <div class="page-container">
+        <?php echo $__env->yieldContent('navigation-header'); ?>
+        <div class="page-content-wrapper">
+            <?php if(Request::path() === 'dashboard'): ?>
+                <div class="content sm-gutter">
+                    <div class="container-fluid padding-25 sm-padding-10">
+                        <?php echo $__env->yieldContent('body'); ?>
+                    </div>
+                </div>
+            <?php elseif(isset($detailPage)): ?>
+                <div class="content">
+                <?php if (!isset($showBreadcrumbs) || $showBreadcrumbs): ?>
+                        <div class="jumbotron" data-pages="parallax">
+                            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                                <div class="inner">
+                                    <?php echo HTML::breadcrumbs(); ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    <?php echo $__env->yieldContent('body'); ?>
+                </div>
+            <?php elseif(isset($settingsPage)): ?>
+                <div class="content">
+                        <div class="jumbotron" data-pages="parallax">
+                            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                                <div class="inner">
+                                    <?php if (!isset($showBreadcrumbs) || $showBreadcrumbs): ?>
+                                    <?php echo HTML::breadcrumbs(); ?>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="container-fluid container-fixed-lg">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="invoice padding-50 sm-padding-10">
+                                    <?php echo $__env->yieldContent('body'); ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php elseif(isset($listControlPage)): ?>
+            		<?php echo $__env->yieldContent('body'); ?>
+            <?php else: ?>
+                <div class="content">
+                    <?php if ((!isset($showBreadcrumbs) || $showBreadcrumbs)): ?>
+                        <div class="jumbotron" data-pages="parallax">
+                            <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                                <div class="inner">
+                                    <?php echo HTML::breadcrumbs(); ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    <div class="container-fluid container-fixed-lg bg-white">
+                        <?php echo $__env->yieldContent('body'); ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <?php echo $__env->yieldContent('modals'); ?>
+        </div>
+        <?php echo $__env->yieldContent('footer'); ?>
+    </div>
+
+    <?php if(! isset($customDesignPage)): ?>
+        <?php echo $__env->yieldContent('search'); ?>
+    <?php endif; ?>
+<?php elseif(isset($viewPage)): ?>
+    <div class="page-container">
+        <?php echo $__env->yieldContent('navigation-header'); ?>
+        <div class="content">
+            <?php echo $__env->yieldContent('body'); ?>
+        </div>
+    </div>
+<?php else: ?>
+    <div class="login-wrapper">
+        <div class="bg-pic">
+            <?php echo $__env->yieldContent('bg'); ?>
+        </div>
+        <div class="login-container bg-white">
+            <?php echo $__env->yieldContent('body'); ?>
+        </div>
+    </div>
+<?php endif; ?>
+<?php if (Session::has('message')): ?>
+    <div class="pgn-wrapper" data-position="top-right">
+        <div class="pgn pgn-flip">
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span></button>
+                <span><?php echo Session::get('message'); ?></span></div>
+        </div>
+    </div>
+<?php endif; ?>
+<?php if (Session::has('error')): ?>
+    <div class="pgn-wrapper" data-position="top-right">
+        <div class="pgn pgn-flip">
+            <div class="alert alert-error">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span></button>
+                <span><?php echo Session::get('error'); ?></span></div>
+        </div>
+    </div>
+<?php endif; ?>
+<?php echo $__env->yieldContent('scripts'); ?>
+
+</body>
+</html>

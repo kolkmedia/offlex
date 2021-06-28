@@ -1,0 +1,35 @@
+
+<?php $__env->startSection('content'); ?>	
+	@parent	
+
+	<?php echo Former::open()->addClass('col-md-8 col-md-offset-0 warn-on-exit'); ?>
+	<?php echo Former::populate($account); ?>
+	<?php echo Former::populateField('notify_sent', intval(Auth::user()->notify_sent)); ?>
+	<?php echo Former::populateField('notify_viewed', intval(Auth::user()->notify_viewed)); ?>
+	<?php echo Former::populateField('notify_paid', intval(Auth::user()->notify_paid)); ?>
+
+	<?php echo Former::legend('email_notifications'); ?>
+
+    <div class="checkbox">
+        <?php echo Former::checkbox('notify_sent', false)->raw(); ?>
+        <label for="notify_sent"><?php echo trans('texts.email_sent'); ?> </label>
+    </div>
+    <div class="checkbox">
+        <?php echo Former::checkbox('notify_viewed', false)->raw(); ?>
+        <label for="notify_viewed"><?php echo trans('texts.email_viewed'); ?> </label>
+    </div>
+    <div class="checkbox">
+        <?php echo Former::checkbox('notify_paid', false)->raw(); ?>
+        <label for="notify_paid"><?php echo trans('texts.email_paid'); ?> </label>
+    </div>
+
+	<?php echo Former::legend('custom_messages'); ?>
+    <?php echo Former::textarea('invoice_terms')->label(trans('texts.default_invoice_terms')); ?>
+    <?php echo Former::textarea('invoice_footer')->label(trans('texts.default_invoice_footer')); ?>
+	<?php echo Former::textarea('email_footer')->label(trans('texts.default_email_footer')); ?> 
+
+	<?php echo Former::actions( Button::btn_success_info_submit(trans('texts.save'), array('class' => 'pull-right'))); ?>
+	<?php echo Former::close(); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('accounts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

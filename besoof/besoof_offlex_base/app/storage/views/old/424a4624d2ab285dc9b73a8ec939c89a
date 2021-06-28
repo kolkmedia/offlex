@@ -1,0 +1,64 @@
+
+<?php $__env->startSection('content'); ?>
+	@parent
+	<?php echo $__env->make('extra.nav_advanced', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+  <?php echo Former::open('users/delete')->addClass('user-form'); ?>
+  <?php echo Former::legend('quarter_management'); ?>
+
+  <div style="display:none">
+    <?php echo Former::text('userPublicId'); ?>
+  </div>
+  <?php echo Former::close(); ?>
+
+
+  <div class="pull-right">  
+    <?php if (Utils::isPro()): ?>    
+        <?php echo Button::btn_info_link(URL::to('quarters/create'), trans("texts.add_quarter"), array('class' => 'pull-right')); ?>
+    <?php endif; ?>
+
+  </div>
+
+    <div class="checkbox table-header-checkbox">
+        <input type="checkbox" id="trashed" onclick="setTrashVisible()" <?php echo Session::get('show_trash:user') ? 'checked' : ''; ?>/>
+    </div>
+
+  <?php echo Datatable::table()
+      ->addColumn(
+        trans('texts.name'),
+        trans('texts.quarter_date_start'),
+        trans('texts.quarter_date_end'),
+        trans('texts.action'))
+      ->setUrl(url('api/quarters/'))
+      ->setOptions('sPaginationType', 'bootstrap')
+      ->setOptions('bFilter', false)
+      ->setOptions('bAutoWidth', false)
+      ->setOptions('aoColumns', [[ "sWidth"=> "20%" ], [ "sWidth"=> "45%" ], ["sWidth"=> "20%"], ["sWidth"=> "15%" ]])
+      ->setOptions('aoColumnDefs', [['bSortable'=>false, 'aTargets'=>[3]]])
+      ->render('datatable'); ?>
+
+  <script>
+  window.onDatatableReady = function() {
+    $('tbody tr').mouseover(function() {
+      $(this).closest('tr').find('.tr-action').css('visibility','visible');
+    }).mouseout(function() {
+      $dropdown = $(this).closest('tr').find('.tr-action');
+      if (!$dropdown.hasClass('open')) {
+        $dropdown.css('visibility','hidden');
+      }
+    });
+  }
+
+  function deleteUser(id) {
+    if (!confirm('Weet u het zeker?')) {
+      return;
+    }
+
+    $('#userPublicId').val(id);
+    $('form.user-form').submit();
+  }
+  </script>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('accounts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

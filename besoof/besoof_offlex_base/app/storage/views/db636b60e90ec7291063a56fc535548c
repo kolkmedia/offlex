@@ -1,0 +1,143 @@
+
+<?php $__env->startSection('head'); ?>
+    @parent
+
+
+    <script src="<?php echo asset('js/pdf_viewer.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo asset('js/compatibility.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo asset('js/pdfmake.min.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo asset('js/vfs_fonts.js'); ?>" type="text/javascript"></script>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+    @parent
+    <?php echo $__env->make('accounts.nav_advanced', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="row">
+        <div class="col-md-6">
+
+            <?php echo Former::open()->addClass('warn-on-exit')->onchange('refreshPDF()'); ?>
+            <?php echo Former::populate($account); ?>
+            <?php echo Former::populateField('hide_quantity', intval($account->hide_quantity)); ?>
+            <?php echo Former::populateField('hide_paid_to_date', intval($account->hide_paid_to_date)); ?>
+
+            <?php echo Former::legend('invoice_design'); ?>
+
+            <?php if (!Utils::isPro() || InvoiceDesign::count() == COUNT_FREE_DESIGNS): ?>
+                <?php echo Former::select('invoice_design_id')->fromQuery($invoiceDesigns, 'name', 'id')->class('form-control normal-form-control'); ?>
+            <?php else: ?>
+                <?php echo Former::select('invoice_design_id')->fromQuery($invoiceDesigns, 'name', 'id')->class('form-control normal-form-control'); ?>
+            <?php endif; ?>
+
+            <?php echo Former::text('font_size')->type('number')->min('0')->step('1')->style('width:120px'); ?>
+
+            <?php echo Former::legend('specify_colors'); ?>
+            <p><?php echo trans('texts.specify_colors_label'); ?></p>
+
+            <div clas="form-group">
+                <p><?php echo trans('texts.specify_colors_primair'); ?></p>
+                <?php echo Former::text('primary_color',false); ?>
+            </div>
+            <div clas="form-group">
+                <p><?php echo trans('texts.specify_colors_secondair'); ?></p>
+                <?php echo Former::text('secondary_color',false); ?>
+            </div>
+
+            <?php echo Button::success_link(URL::to('/company/advanced_settings/customize_design'), trans("texts.customize_design"),array('class' => 'pull-right')); ?>
+
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+
+            <?php echo Former::legend('invoice_options'); ?>
+            <div class="checkbox">
+                <?php echo Former::checkbox('hide_quantity',false)->raw(); ?>
+                <label for="hide_quantity"><?php echo trans('texts.hide_quantity_help'); ?> </label>
+            </div>
+            <div class="checkbox">
+                <?php echo Former::checkbox('hide_paid_to_date',false)->raw(); ?>
+                <label for="hide_paid_to_date"><?php echo trans('texts.hide_paid_to_date_help'); ?> </label>
+            </div>
+
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+
+            <?php if (Auth::user()->isPro()): ?>
+                <?php echo Former::actions( Button::btn_info_submit(trans('texts.save'))); ?>
+            <?php else: ?>
+                <script>
+                    $(function () {
+                        $('form.warn-on-exit input').prop('disabled', true);
+                    });
+                </script>
+            <?php endif; ?>
+
+            <?php echo Former::close(); ?>
+
+        </div>
+        <div class="col-md-6">
+            <?php echo $__env->make('invoices.pdf', ['account' => Auth::user()->account, 'pdfHeight' => 1050], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+    </div>
+
+    <script>
+        var invoiceDesigns = <?php echo $invoiceDesigns; ?>;
+        var invoice = <?php echo json_encode($invoice); ?>;
+
+        function getDesignJavascript() {
+            var id = $('#invoice_design_id').val();
+            if (id == '-1') {
+                showMoreDesigns();
+                $('#invoice_design_id').val(1);
+                return invoiceDesigns[0].javascript;
+            } else {
+                var design = _.find(invoiceDesigns, function(design){ return design.id == id});
+                return design ? design.javascript : '';
+            }
+        }
+
+        function getPDFString(cb) {
+            invoice.is_pro = <?php echo Auth::user()->isPro() ? 'true' : 'false'; ?>;
+            invoice.account.hide_quantity = $('#hide_quantity').is(":checked");
+            invoice.account.hide_paid_to_date = $('#hide_paid_to_date').is(":checked");
+            invoice.invoice_design_id = $('#invoice_design_id').val();
+
+            OFFLEX.primaryColor = $('#primary_color').val();
+            OFFLEX.secondaryColor = $('#secondary_color').val();
+            OFFLEX.fontSize = parseInt($('#font_size').val());
+
+            var fields = ['item', 'description', 'unit_cost', 'quantity'];
+            invoiceLabels.old = {};
+
+            for (var i=0; i<fields.length; i++) {
+                var field = fields[i];
+                var val = $('#labels_' + field).val();
+                if (invoiceLabels.old.hasOwnProperty(field)) {
+                    invoiceLabels.old[field] = invoiceLabels[field];
+                }
+                if (val) {
+                    invoiceLabels[field] = val;
+                }
+            }
+            generatePDF(invoice, getDesignJavascript(), true, cb);
+        }
+
+        $(function () {
+            var options = {
+                preferredFormat: 'hex',
+                disabled: <?php echo Auth::user()->isPro() ? 'false' : 'true'; ?>,
+                showInitial: false,
+                showInput: true,
+                allowEmpty: true,
+                clickoutFiresChange: true,
+            };
+
+            $('#primary_color').spectrum(options);
+            $('#secondary_color').spectrum(options);
+
+            refreshPDF();
+        });
+
+    </script>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('accounts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

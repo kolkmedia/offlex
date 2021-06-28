@@ -1,0 +1,109 @@
+
+<?php $__env->startSection('head'); ?>
+    @parent
+
+    <style type="text/css">
+        textarea {
+            min-height: 150px !important;
+        }
+    </style>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+    @parent
+    <?php echo $__env->make('accounts.nav_advanced', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <?php echo Former::open()->addClass('col-md-8 col-md-offset-0 warn-on-exit'); ?>
+    <?php echo Former::populateField('email_template_invoice', $invoiceEmail); ?>
+    <?php echo Former::populateField('email_template_quote', $quoteEmail); ?>
+    <?php echo Former::populateField('email_template_payment', $paymentEmail); ?>
+
+    <?php echo Former::legend('invoice_email'); ?>
+    <div class="row">
+        <div class="col-md-7">
+            <?php echo Former::textarea('email_template_invoice')->raw(); ?>
+        </div>
+        <div class="col-md-5" id="invoice_preview"></div>
+    </div>
+
+    <p>&nbsp;</p>
+    <?php echo Former::legend('quote_email'); ?>
+    <div class="row">
+        <div class="col-md-7">
+            <?php echo Former::textarea('email_template_quote')->raw(); ?>
+        </div>
+        <div class="col-md-5" id="quote_preview"></div>
+    </div>
+
+    <p>&nbsp;</p>
+
+    <?php echo Former::legend('payment_email'); ?>
+    <div class="row">
+        <div class="col-md-7">
+            <?php echo Former::textarea('email_template_payment')->raw(); ?>
+        </div>
+        <div class="col-md-5" id="payment_preview"></div>
+    </div>
+
+    <p>&nbsp;</p>
+
+    <?php if (Auth::user()->isPro()): ?>
+        <?php echo Former::actions( 
+            Button::btn_info_submit(trans('texts.save'))
+        ); ?>
+    <?php else: ?>
+        <script>
+            $(function() {
+                $('form.warn-on-exit input').prop('disabled', true);
+            });
+        </script>
+    <?php endif; ?>
+
+    <?php echo Former::close(); ?>
+
+    <script type="text/javascript">
+
+        $(function() {
+            $('#email_template_invoice').keyup(refreshInvoice);
+            $('#email_template_quote').keyup(refreshQuote);
+            $('#email_template_payment').keyup(refreshPayment);
+
+            refreshInvoice();
+            refreshQuote();
+            refreshPayment();
+        });
+
+        function refreshInvoice() {
+            $('#invoice_preview').html(processVariables($('#email_template_invoice').val()));
+        }
+
+        function refreshQuote() {
+            $('#quote_preview').html(processVariables($('#email_template_quote').val()));
+        }
+
+        function refreshPayment() {
+            $('#payment_preview').html(processVariables($('#email_template_payment').val()));
+        }
+
+        function processVariables(str) {
+            if (!str) {
+                return '';
+            }
+
+            keys = ['footer', 'account', 'client', 'amount', 'link'];
+            vals = [<?php echo json_encode($emailFooter); ?>, '<?php echo Auth::user()->account->getDisplayName(); ?>', 'Klant', formatMoney(100), '<?php echo OFFLEX_WEB_URL; ?>']
+
+            for (var i=0; i<keys.length; i++) {
+                var regExp = new RegExp('\\$'+keys[i], 'g');
+                str = str.replace(regExp, vals[i]);
+            }
+
+            return str;
+        }
+
+    </script>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('accounts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

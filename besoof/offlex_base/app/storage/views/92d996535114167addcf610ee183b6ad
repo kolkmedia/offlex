@@ -1,0 +1,6 @@
+<ul class="nav nav-tabs nav-tabs-simple">
+    <?php echo HTML::nav_link_sub('extra/categories', 'categories','categories'); ?>
+    <?php echo HTML::nav_link_sub('extra/quarters', 'quarters','quarters'); ?>
+</ul>
+<p>&nbsp;</p>
+

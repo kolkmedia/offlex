@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+
+    webserver_offlex: &laravel-template
+      image: webserver_offlex:latest
+      build:
+        context: .
+        dockerfile: ./Dockerfile
+      container_name: webserver_offlex
+      expose:
+        - 80
+        - 443
+      ports:
+        - 80:80
+        - 443:443
+      volumes:
+        - .:/var/www/html:delegated
+        - ./offlex-besoof/kolkmedia/offlex_base:/var/www/html/offlex_base
+        - ./offlex-besoof/kolkmedia/public_html:/var/www/html/public_html
+      depends_on:
+        - db_offlex
+      links:
+        - db_offlex
+      environment:
+        - DB_PORT=33061
+        - DB_HOST=db_offlex
+
+    db_offlex:
+      container_name: db_offlex
+      #command: --default-authentication-plugin=mysql_native_password
+      build:
+        context: .
+        dockerfile: ./database/Dockerfile
+      environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=offlex
+        - MYSQL_ROOT_HOST=%
+      volumes:
+        - ./database/mysql_db:/var/lib/mysql
+        - ./docker/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+      expose:
+        - 3306
+      ports:
+        - 33061:3306

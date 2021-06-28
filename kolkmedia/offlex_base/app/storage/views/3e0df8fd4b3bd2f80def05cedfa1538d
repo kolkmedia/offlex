@@ -1,0 +1,313 @@
+
+<?php $__env->startSection('content'); ?>
+    <nav class="navbar navbar-default bg-master-lighter sm-padding-10" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sub-nav">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="sub-nav">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <?php echo Former::open('clients/bulk')->addClass('mainForm'); ?>
+                        <div style="display:none">
+                            <?php echo Former::text('action'); ?>
+                            <?php echo Former::text('id')->value($client->public_id); ?>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <?php if ($gatewayLink): ?>
+                                    <?php echo Button::link($gatewayLink, trans('texts.view_in_stripe'), ['target' => '_blank']); ?>
+                                <?php endif; ?>
+                                <?php if ($client->trashed()): ?>
+                                    <a href="#" onclick="onRestoreClick()">
+                                        <i class="fa fa-undo m-r-10"></i><?php echo trans('texts.restore_client'); ?>
+                                    </a>
+                                <?php else: ?>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fa fa-file-text m-r-10"></i><?php echo trans('texts.edit_client'); ?>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="<?php echo URL::to('clients/' . $client->public_id . '/edit'); ?>"><?php echo trans('texts.edit_client'); ?></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="onArchiveClick()"><?php echo trans('texts.archive_client'); ?></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="onDeleteClick()"><?php echo trans('texts.delete_client'); ?></a>
+                                        </li>
+                                    </ul>
+                                <?php endif; ?>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <?php if (!$client->trashed()): ?>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fa fa-file-text m-r-10"></i><?php echo trans('texts.create_invoice'); ?>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <?php foreach ($actionLinks as $actionLink): ?>
+                                            <li>
+                                                <a href="<?php echo $actionLink[1]; ?>"><?php echo $actionLink[0]; ?></a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endif; ?>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="<?php echo HTML::clean_link('clients'); ?>">
+                                    <i class="fa  fa-arrow-left m-r-10"></i><?php echo trans('texts.clients'); ?>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <?php echo former::close(); ?>
+                    </div>
+                    <div class="col-sm-4 pull-right">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#" class="p-r-10"
+                                   onclick="$.Pages.setFullScreen(document.querySelector('html'));">
+                                    <i class="fa fa-expand"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid container-fixed-lg">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="invoice padding-50 sm-padding-10">
+                    <h2><?php echo $client->getDisplayName(); ?></h2>
+                    <?php if ($client->last_login > 0): ?>
+                        <h3 style="margin-top:0px">
+                            <small>
+                                <?php echo trans('texts.last_logged_in'); ?> <?php echo Utils::timestampToDateTimeString(strtotime($client->last_login));; ?>
+                            </small>
+                        </h3>
+                    <?php endif; ?>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h3><?php echo trans('texts.details'); ?></h3>
+
+                            <p><?php echo $client->getIdNumber(); ?></p>
+
+                            <p><?php echo $client->getVatNumber(); ?></p>
+
+                            <p><?php echo $client->getAddress(); ?></p>
+
+                            <p><?php echo $client->getCustomFields(); ?></p>
+
+                            <p><?php echo $client->getPhone(); ?></p>
+
+                            <p><?php echo $client->getNotes(); ?></p>
+
+                            <p><?php echo $client->getIndustry(); ?></p>
+
+                            <p><?php echo $client->getWebsite(); ?></p>
+
+                            <p><?php echo $client->payment_terms ? trans('texts.payment_terms') . ": Net " . $client->payment_terms : ''; ?></p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <h3><?php echo trans('texts.contacts'); ?></h3>
+                            <?php foreach ($client->contacts as $contact): ?>
+                                <?php echo $contact->getDetails(); ?>
+                            <?php endforeach; ?>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h3><?php echo trans('texts.standing'); ?>
+                                <table class="table" style="width:300px">
+                                    <tr>
+                                        <td>
+                                            <small><?php echo trans('texts.paid_to_date'); ?></small>
+                                        </td>
+                                        <td style="text-align: right"><?php echo Utils::formatMoney($client->paid_to_date, $client->currency_id);; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <small><?php echo trans('texts.balance'); ?></small>
+                                        </td>
+                                        <td style="text-align: right"><?php echo Utils::formatMoney($client->balance, $client->currency_id);; ?></td>
+                                    </tr>
+                                    <?php if ($credit > 0): ?>
+                                        <tr>
+                                            <td>
+                                                <small><?php echo trans('texts.credit'); ?></small>
+                                            </td>
+                                            <td style="text-align: right"><?php echo Utils::formatMoney($credit, $client->currency_id);; ?></td>
+                                        </tr>
+                                    <?php endif; ?>
+                                </table>
+                            </h3>
+
+                        </div>
+                    </div>
+
+                    <p>&nbsp;</p>
+
+                    <ul class="nav nav-tabs nav-tabs-fillup">
+                        <?php echo HTML::tab_link('#activity', trans('texts.activity'), true); ?>
+                        <?php if (Utils::isPro()): ?>
+                            <?php echo HTML::tab_link('#quotes', trans('texts.quotes')); ?>
+                        <?php endif; ?>
+                        <?php echo HTML::tab_link('#invoices', trans('texts.invoices')); ?>
+                        <?php echo HTML::tab_link('#payments', trans('texts.payments')); ?>
+                        <?php echo HTML::tab_link('#credits', trans('texts.credits')); ?>
+                    </ul>
+
+                    <div class="tab-content">
+
+                        <div class="tab-pane active" id="activity">
+
+                            <?php echo Datatable::table()
+                                ->addColumn(
+                                    trans('texts.date'),
+                                    trans('texts.message'),
+                                    trans('texts.balance'),
+                                    trans('texts.adjustment'))
+                                ->setUrl(url('api/activities/'. $client->public_id))
+                                ->setOptions('sPaginationType', 'bootstrap')
+                                ->setOptions('bFilter', false)
+                                ->setOptions('aaSorting', [['0', 'desc']])
+                                ->render('datatable'); ?>
+
+                        </div>
+
+                        <?php if (Utils::isPro()): ?>
+                            <div class="tab-pane" id="quotes">
+
+                                <?php echo Datatable::table()
+                                    ->addColumn(
+                                        trans('texts.quote_number'),
+                                        trans('texts.quote_date'),
+                                        trans('texts.total'),
+                                        trans('texts.due_date'),
+                                        trans('texts.status'))
+                                    ->setUrl(url('api/quotes/'. $client->public_id))
+                                    ->setOptions('sPaginationType', 'bootstrap')
+                                    ->setOptions('bFilter', false)
+                                    ->setOptions('aaSorting', [['0', 'desc']])
+                                    ->render('datatable'); ?>
+
+                            </div>
+                        <?php endif; ?>
+
+                        <div class="tab-pane" id="invoices">
+
+                            <?php if ($hasRecurringInvoices): ?>
+                                <?php echo Datatable::table()
+                                    ->addColumn(
+                                        trans('texts.frequency_id'),
+                                        trans('texts.start_date'),
+                                        trans('texts.end_date'),
+                                        trans('texts.invoice_total'))
+                                    ->setUrl(url('api/recurring_invoices/' . $client->public_id))
+                                    ->setOptions('sPaginationType', 'bootstrap')
+                                    ->setOptions('bFilter', false)
+                                    ->setOptions('aaSorting', [['0', 'asc']])
+                                    ->render('datatable'); ?>
+                            <?php endif; ?>
+
+                            <?php echo Datatable::table()
+                                ->addColumn(
+                                        trans('texts.invoice_number'),
+                                        trans('texts.invoice_date'),
+                                        trans('texts.invoice_total'),
+                                        trans('texts.balance_due'),
+                                        trans('texts.due_date'),
+                                        trans('texts.status'))
+                                ->setUrl(url('api/invoices/' . $client->public_id))
+                                ->setOptions('sPaginationType', 'bootstrap')
+                                ->setOptions('bFilter', false)
+                                ->setOptions('aaSorting', [['0', 'asc']])
+                                ->render('datatable'); ?>
+
+                        </div>
+                        <div class="tab-pane" id="payments">
+
+                            <?php echo Datatable::table()
+                                        ->addColumn(
+                                            trans('texts.invoice'),
+                                            trans('texts.transaction_reference'),
+                                            trans('texts.method'),
+                                            trans('texts.payment_amount'),
+                                            trans('texts.payment_date'))
+                                ->setUrl(url('api/payments/' . $client->public_id))
+                                ->setOptions('sPaginationType', 'bootstrap')
+                                ->setOptions('bFilter', false)
+                                ->setOptions('aaSorting', [['0', 'asc']])
+                                ->render('datatable'); ?>
+
+                        </div>
+                        <div class="tab-pane" id="credits">
+
+                            <?php echo Datatable::table()
+                                        ->addColumn(
+                                                trans('texts.credit_amount'),
+                                                trans('texts.credit_balance'),
+                                                trans('texts.credit_date'),
+                                                trans('texts.private_notes'))
+                                ->setUrl(url('api/credits/' . $client->public_id))
+                                ->setOptions('sPaginationType', 'bootstrap')
+                                ->setOptions('bFilter', false)
+                                ->setOptions('aaSorting', [['0', 'asc']])
+                                ->render('datatable'); ?>
+
+                        </div>
+                    </div>
+
+                    <script type="text/javascript">
+
+                        $(function () {
+                            $('#normalDropDown > button:first').click(function () {
+                                window.location = '<?php echo URL::to('clients/' . $client->public_id . '/edit'); ?>';
+                            });
+                            $('#primaryDropDown > button:first').click(function () {
+                                window.location = '<?php echo URL::to('invoices/create/' . $client->public_id ); ?>';
+                            });
+                        });
+
+                        function onArchiveClick() {
+                            $('#action').val('archive');
+                            $('.mainForm').submit();
+                        }
+
+                        function onRestoreClick() {
+                            $('#action').val('restore');
+                            $('.mainForm').submit();
+                        }
+
+                        function onDeleteClick() {
+                            if (confirm("<?php echo trans('texts.are_you_sure'); ?>")) {
+                                $('#action').val('delete');
+                                $('.mainForm').submit();
+                            }
+                        }
+
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.template-header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
