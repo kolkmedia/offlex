@@ -3,10 +3,10 @@ version: '3'
 services:
     webserver_offlex_kolkmedia: &laravel-template
       image: webserver_offlex_kolkmedia:latest
+      container_name: webserver_offlex_kolkmedia
       build:
         context: .
         dockerfile: ./Dockerfile
-      container_name: webserver_offlex_kolkmedia
       expose:
         - 80
       volumes:
@@ -38,9 +38,9 @@ services:
       expose:
         - 3306
       ports:
-        - 33061:3306    
+        - 33061:3306
 
 networks:
   default:
-    external:
-      name: nginx-proxy        
+    external: true
+    name: nginx-proxy

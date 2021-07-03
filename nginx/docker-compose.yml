@@ -8,9 +8,10 @@ services:
       - "443:443"
     volumes:
       - ./certs:/etc/nginx/certs
+      - ./extra.conf:/etc/nginx/conf.d/extra.conf
       - /var/run/docker.sock:/tmp/docker.sock:ro
     restart: unless-stopped
 networks:
   default:
-    external:
-      name: nginx-proxy
+    external: true
+    name: nginx-proxy

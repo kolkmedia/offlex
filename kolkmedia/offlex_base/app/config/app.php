@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => '',
+	'url' => 'https://kolkmedia.offlex',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -67,7 +67,8 @@ return array(
 	| cat /dev/random | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
 	*/
 
-	'key' => 'BAjxdhPtPs73vy1S9T23PJDKSXdWwJE4',
+	'key' => 'pV9E6mV8sUjHgxcCtQoJgXC46pZcTTRw',
+	// 'key' => getenv('APP_KEY'),
 
 	/*
 	|--------------------------------------------------------------------------

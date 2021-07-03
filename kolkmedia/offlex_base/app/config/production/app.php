@@ -1,5 +1,5 @@
 <?php return array (
-  'url' => 'https://www.offlex.tst',
-  'key' => 'ZsHqEDFucVFF31yxd559a9aLOSIudUN5',
+  'url'   => 'https://kolkmedia.offlex',
+  'key'   => 'pV9E6mV8sUjHgxcCtQoJgXC46pZcTTRw',
   'debug' => false,
 );

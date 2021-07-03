@@ -50,6 +50,8 @@ RUN docker-php-ext-install pcntl
 # disable default site and delete all default files inside APP_HOME
 RUN a2dissite 000-default.conf
 
+# COPY assets/offlex.conf /etc/apache2/conf.d/
+
 # create document root
 RUN mkdir -p $APP_HOME
 RUN mkdir -p $WWW_HOME
@@ -72,7 +74,7 @@ RUN a2enmod ssl
 
 # generate certificates
 # TODO: change it and make additional logic for production environment
-RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/ssl-cert-offlex.key -out /etc/ssl/certs/ssl-cert-offlex.pem -subj "/C=AT/ST=Vienna/L=Vienna/O=Security/OU=Development/CN=www.offlex.tst"
+RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/ssl-cert-kolkmedia.offlex.key -out /etc/ssl/certs/ssl-cert-kolkmedia.offlex.pem -subj "/C=AT/ST=Vienna/L=Vienna/O=Security/OU=Development/CN=kolkmedia.offlex"
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
@@ -81,3 +83,5 @@ WORKDIR $APP_HOME
 
 USER www-data
 USER root
+
+# RUN composer install

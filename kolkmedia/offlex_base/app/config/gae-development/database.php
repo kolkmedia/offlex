@@ -11,7 +11,7 @@ return array(
 			'database'  => getenv('DB_NAME'),
 			'username'  => getenv('DB_USERNAME'),
 			'password'  => getenv('DB_PASSWORD'),
-			'strict' 	=> false,
+			'strict' 	=> getenv('DB_STRICT_MODE'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
