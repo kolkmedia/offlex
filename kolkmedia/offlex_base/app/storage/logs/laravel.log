@@ -6084,3 +6084,541 @@ Did you mean one of these?
  {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"https://www.offlex.tst/dashboard","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.24.0.1","count":49} []
 [2021-06-25 12:42:03] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Database/Connection.php [Line 539] => SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'offlex.clients.currency_id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by (SQL: select SUM(clients.paid_to_date) as value, clients.currency_id as currency_id from `accounts` left join `clients` on `accounts`.`id` = `clients`.`account_id` where `accounts`.`id` = 1 and `clients`.`is_deleted` =  group by `accounts`.`id`, CASE WHEN clients.currency_id IS NULL THEN CASE WHEN accounts.currency_id IS NULL THEN 1 ELSE accounts.currency_id END ELSE clients.currency_id END)
  {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"https://www.offlex.tst/dashboard","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.24.0.1","count":50} []
+[2021-07-01 07:13:54] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":0,"user_name":"","url":"http://kolkmedia.offlex/favicon.ico","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.18.0.2","count":1} []
+[2021-07-01 14:33:31] production.ERROR: 500 /var/www/html/offlex_base/bootstrap/compiled.php [Line 7833] => mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":1} []
+[2021-07-01 14:33:47] production.ERROR: 500 /var/www/html/offlex_base/bootstrap/compiled.php [Line 7833] => mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex/setup","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":1} []
+[2021-07-01 14:35:43] production.ERROR: 500 /var/www/html/offlex_base/bootstrap/compiled.php [Line 7833] => mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex/setup","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":1} []
+[2021-07-01 14:36:31] production.ERROR: 500 /var/www/html/offlex_base/bootstrap/compiled.php [Line 7833] => mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex/setup","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":1} []
+[2021-07-01 14:39:09] production.ERROR: 500 /var/www/html/offlex_base/bootstrap/compiled.php [Line 7833] => mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex/setup","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":1} []
+[2021-07-01 14:40:01] production.ERROR: 500 /var/www/html/offlex_base/bootstrap/compiled.php [Line 7833] => mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex/setup","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":1} []
+[2021-07-01 14:40:11] production.ERROR: 500 /var/www/html/offlex_base/bootstrap/compiled.php [Line 7833] => mcrypt_encrypt(): Key of size 3 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex/setup","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":1} []
+[2021-07-01 14:44:48] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php [Line 47] => SQLSTATE[HY000] [2002] Connection refused
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex/login","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":1} []
+[2021-07-01 14:45:16] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php [Line 47] => SQLSTATE[HY000] [2002] Connection refused
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex/login","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":2} []
+[2021-07-01 14:45:54] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php [Line 47] => SQLSTATE[HY000] [2002] Connection refused
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex/login","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":3} []
+[2021-07-01 14:46:09] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php [Line 47] => SQLSTATE[HY000] [2002] Connection refused
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex/login","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":4} []
+[2021-07-01 14:46:31] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php [Line 47] => SQLSTATE[HY000] [2002] Connection refused
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex/login","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":5} []
+[2021-07-01 14:47:00] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php [Line 47] => SQLSTATE[HY000] [1045] Access denied for user ''@'172.19.0.1' (using password: NO)
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex/login","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":6} []
+[2021-07-01 14:47:14] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php [Line 47] => SQLSTATE[HY000] [1045] Access denied for user ''@'172.19.0.1' (using password: NO)
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex/login","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":7} []
+[2021-07-01 14:47:20] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php [Line 47] => SQLSTATE[HY000] [1045] Access denied for user ''@'172.19.0.1' (using password: NO)
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex/login","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":8} []
+[2021-07-01 14:48:12] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php [Line 47] => SQLSTATE[HY000] [2002] Connection refused
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex/login","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":9} []
+[2021-07-01 14:50:51] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php [Line 47] => SQLSTATE[HY000] [2002] Connection refused
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex/login","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":10} []
+[2021-07-01 14:51:24] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php [Line 47] => SQLSTATE[HY000] [2002] Connection refused
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex/login","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.19.0.1","count":11} []
+[2021-07-01 14:55:54] production.ERROR: 500 /var/www/html/offlex_base/vendor/symfony/console/Symfony/Component/Console/Application.php [Line 562] => Command "config:cache" is not defined.
+
+Did you mean one of these?
+    config:publish
+    confide:controller
+    confide:routes
+    confide:migration
+ {"context":"PHP","user_id":0,"user_name":"","url":"http://localhost","user_agent":"","ip":"127.0.0.1","count":1} []
+[2021-07-01 14:56:00] production.ERROR: 500 /var/www/html/offlex_base/vendor/symfony/console/Symfony/Component/Console/Application.php [Line 562] => Command "config:clear" is not defined.
+
+Did you mean one of these?
+    debugbar:clear
+    cache:clear
+    auth:clear-reminders
+    config:publish
+    confide:controller
+    confide:routes
+    confide:migration
+ {"context":"PHP","user_id":0,"user_name":"","url":"http://localhost","user_agent":"","ip":"127.0.0.1","count":1} []
+[2021-07-01 15:09:41] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/i","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0","ip":"172.18.0.2","count":38} []
+[2021-07-02 10:18:09] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/favicon.ico","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":1} []
+[2021-07-02 14:40:17] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":1} []
+[2021-07-02 14:46:56] production.ERROR: 500 /var/www/html/offlex_base/vendor/symfony/console/Symfony/Component/Console/Application.php [Line 514] => There are no commands defined in the "route" namespace.
+ {"context":"PHP","user_id":0,"user_name":"","url":"https://kolkmedia.offlex","user_agent":"","ip":"127.0.0.1","count":1} []
+[2021-07-02 14:53:25] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/edit","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":2} []
+[2021-07-02 14:53:25] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/favicon.ico","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":3} []
+[2021-07-02 15:03:13] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/css/bootstrap-combobox.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-02 15:03:13] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/offlex.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-02 15:03:13] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/js/pdf_viewer.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-02 15:03:13] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/js/pdfmake.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-02 15:03:13] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/js/compatibility.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-02 15:03:13] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/js/vfs_fonts.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-02 15:03:13] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/js/compatibility.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":5} []
+[2021-07-02 15:03:13] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/js/pdfmake.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":6} []
+[2021-07-02 15:03:14] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/js/vfs_fonts.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":7} []
+[2021-07-02 15:03:14] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/logo/offlex_small.png","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":8} []
+[2021-07-02 15:03:14] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/logo/offlex_large.png","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":8} []
+[2021-07-02 15:03:14] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/images/designs/hipster_thumb.png","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":8} []
+[2021-07-02 15:03:14] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/images/designs/business_thumb.png","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":8} []
+[2021-07-02 15:03:15] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/images/designs/elegant_thumb.png","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":8} []
+[2021-07-02 15:03:15] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/images/designs/photo_thumb.png","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":8} []
+[2021-07-02 15:03:15] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/images/designs/playful_thumb.png","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":8} []
+[2021-07-02 15:03:15] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/images/designs/creative_thumb.png","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":8} []
+[2021-07-02 15:03:15] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices/62/kolkmedia.offlex/favicon.png","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":9} []
+[2021-07-02 15:17:01] production.INFO: attach [] []
+[2021-07-03 09:24:41] production.ERROR: 500 /var/www/html/offlex_base/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/File/File.php [Line 41] => The file "/home/offlex1q/offlex_base/app/storage/uploads/expenses/2016/Kolkmedia/Aanschaf Camera_18-07-2016-14_22_38.pdf" does not exist (View: /var/www/html/offlex_base/app/views/expenses/edit.blade.php)
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/expenses/32/edit","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":1} []
+[2021-07-03 09:24:41] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/favicon.ico","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":2} []
+[2021-07-03 09:24:47] production.ERROR: 500 /var/www/html/offlex_base/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/File/File.php [Line 41] => The file "/home/offlex1q/offlex_base/app/storage/uploads/expenses/2015//Aanbetaling lease_11-09-2015-09_51_32.jpg" does not exist (View: /var/www/html/offlex_base/app/views/expenses/edit.blade.php)
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/expenses/2/edit","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":3} []
+[2021-07-03 09:25:54] production.INFO: attach [] []
+[2021-07-03 09:29:27] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Exception/PlainDisplayer.php [Line 15] => Uncaught TypeError: Argument 1 passed to Illuminate\Exception\PlainDisplayer::display() must be an instance of Exception, instance of Error given, called in /var/www/html/offlex_base/bootstrap/compiled.php on line 8697 and defined in /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Exception/PlainDisplayer.php:15
+Stack trace:
+#0 /var/www/html/offlex_base/bootstrap/compiled.php(8697): Illuminate\Exception\PlainDisplayer->display(Object(Error))
+#1 /var/www/html/offlex_base/bootstrap/compiled.php(8649): Illuminate\Exception\Handler->displayException(Object(Error))
+#2 /var/www/html/offlex_base/bootstrap/compiled.php(8653): Illuminate\Exception\Handler->handleException(Object(Error))
+#3 [internal function]: Illuminate\Exception\Handler->handleUncaughtException(Object(Error))
+#4 {main}
+  thrown
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-03 09:29:58] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Exception/PlainDisplayer.php [Line 15] => Uncaught TypeError: Argument 1 passed to Illuminate\Exception\PlainDisplayer::display() must be an instance of Exception, instance of Error given, called in /var/www/html/offlex_base/bootstrap/compiled.php on line 8697 and defined in /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Exception/PlainDisplayer.php:15
+Stack trace:
+#0 /var/www/html/offlex_base/bootstrap/compiled.php(8697): Illuminate\Exception\PlainDisplayer->display(Object(Error))
+#1 /var/www/html/offlex_base/bootstrap/compiled.php(8649): Illuminate\Exception\Handler->displayException(Object(Error))
+#2 /var/www/html/offlex_base/bootstrap/compiled.php(8653): Illuminate\Exception\Handler->handleException(Object(Error))
+#3 [internal function]: Illuminate\Exception\Handler->handleUncaughtException(Object(Error))
+#4 {main}
+  thrown
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-03 09:29:59] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Exception/PlainDisplayer.php [Line 15] => Uncaught TypeError: Argument 1 passed to Illuminate\Exception\PlainDisplayer::display() must be an instance of Exception, instance of Error given, called in /var/www/html/offlex_base/bootstrap/compiled.php on line 8697 and defined in /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Exception/PlainDisplayer.php:15
+Stack trace:
+#0 /var/www/html/offlex_base/bootstrap/compiled.php(8697): Illuminate\Exception\PlainDisplayer->display(Object(Error))
+#1 /var/www/html/offlex_base/bootstrap/compiled.php(8649): Illuminate\Exception\Handler->displayException(Object(Error))
+#2 /var/www/html/offlex_base/bootstrap/compiled.php(8653): Illuminate\Exception\Handler->handleException(Object(Error))
+#3 [internal function]: Illuminate\Exception\Handler->handleUncaughtException(Object(Error))
+#4 {main}
+  thrown
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-03 12:00:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-scrollbar/jquery.scrollbar.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":1} []
+[2021-07-03 12:00:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/boostrapv3/css/bootstrap.min.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":1} []
+[2021-07-03 12:00:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/bootstrap-datepicker/css/datepicker3.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":1} []
+[2021-07-03 12:00:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/switchery/css/switchery.min.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":1} []
+[2021-07-03 12:00:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/pace/pace-theme-flash.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":1} []
+[2021-07-03 12:00:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/rickshaw/rickshaw.min.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":1} []
+[2021-07-03 12:00:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/nv.d3.min.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":1} []
+[2021-07-03 12:00:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/mapplic/css/mapplic.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":1} []
+[2021-07-03 12:00:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/font-awesome/css/font-awesome.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":1} []
+[2021-07-03 12:00:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/bootstrap-select2/select2.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":1} []
+[2021-07-03 12:00:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-metrojs/MetroJs.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":1} []
+[2021-07-03 12:00:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/css/bootstrap-combobox.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":2} []
+[2021-07-03 12:00:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/offlex.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":2} []
+[2021-07-03 12:00:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/css/offlex.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":2} []
+[2021-07-03 12:00:47] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/css/offlex-icons.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":2} []
+[2021-07-03 12:00:47] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/pace/pace.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":3} []
+[2021-07-03 12:00:47] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/modernizr.custom.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":3} []
+[2021-07-03 12:00:47] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-ui/jquery-ui.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":3} []
+[2021-07-03 12:00:47] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/boostrapv3/js/bootstrap.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":3} []
+[2021-07-03 12:00:47] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery/jquery-easy.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":3} []
+[2021-07-03 12:00:47] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-actual/jquery.actual.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":3} []
+[2021-07-03 12:00:47] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-bez/jquery.bez.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":3} []
+[2021-07-03 12:00:47] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-scrollbar/jquery.scrollbar.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":3} []
+[2021-07-03 12:00:47] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-unveil/jquery.unveil.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":3} []
+[2021-07-03 12:00:47] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/bootstrap-select2/select2.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":3} []
+[2021-07-03 12:00:47] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-ios-list/jquery.ioslist.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":3} []
+[2021-07-03 12:00:47] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/switchery/js/switchery.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-03 12:00:47] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/classie/classie.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-03 12:00:48] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-03 12:00:48] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-datatable/media/js/jquery.dataTables.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-03 12:00:48] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-datatable/extensions/Bootstrap/jquery-datatable-bootstrap.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-03 12:00:48] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/lib/d3.v3.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-03 12:00:48] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/utils.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-03 12:00:48] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/nv.d3.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-03 12:00:48] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/tooltip.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":5} []
+[2021-07-03 12:00:48] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/models/lineWithFocusChart.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":5} []
+[2021-07-03 12:00:48] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/mapplic/js/jquery.mousewheel.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":5} []
+[2021-07-03 12:00:48] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/mapplic/js/hammer.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":5} []
+[2021-07-03 12:00:48] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/interactiveLayer.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":5} []
+[2021-07-03 12:00:48] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/rickshaw/rickshaw.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":5} []
+[2021-07-03 12:00:48] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-metrojs/MetroJs.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":5} []
+[2021-07-03 12:00:48] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/skycons/skycons.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":5} []
+[2021-07-03 12:00:48] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/models/axis.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":6} []
+[2021-07-03 12:00:48] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-sparkline/jquery.sparkline.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":5} []
+[2021-07-03 12:00:48] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/offlex.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":6} []
+[2021-07-03 12:00:49] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/form_layouts.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":6} []
+[2021-07-03 12:00:49] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/bootstrap-form-helpers/bootstrap-formhelpers.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":6} []
+[2021-07-03 12:00:49] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/tables.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":6} []
+[2021-07-03 12:00:49] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/models/line.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":6} []
+[2021-07-03 12:00:49] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/scripts.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":6} []
+[2021-07-03 12:00:49] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/form_wizard.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":6} []
+[2021-07-03 12:00:49] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":6} []
+[2021-07-03 12:00:49] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/boostrap-form-wizard/js/jquery.bootstrap.wizard.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":6} []
+[2021-07-03 12:00:49] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/logo/offlex_large.png","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":6} []
+[2021-07-03 12:00:49] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-bez/jquery.bez.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":7} []
+[2021-07-03 12:00:49] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/logo/offlex_small.png","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":1} []
+[2021-07-03 12:00:49] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/mapplic/js/mapplic.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":1} []
+[2021-07-03 12:00:49] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-ios-list/jquery.ioslist.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":2} []
+[2021-07-03 12:00:49] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-actual/jquery.actual.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":3} []
+[2021-07-03 12:00:49] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-scrollbar/jquery.scrollbar.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":4} []
+[2021-07-03 12:00:49] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/bootstrap-select2/select2.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":5} []
+[2021-07-03 12:00:49] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/classie/classie.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":6} []
+[2021-07-03 12:00:50] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/switchery/js/switchery.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":7} []
+[2021-07-03 12:00:50] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-datatable/media/js/jquery.dataTables.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":8} []
+[2021-07-03 12:00:50] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":9} []
+[2021-07-03 12:00:50] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-datatable/extensions/Bootstrap/jquery-datatable-bootstrap.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":10} []
+[2021-07-03 12:00:50] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/lib/d3.v3.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":11} []
+[2021-07-03 12:00:50] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/nv.d3.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":12} []
+[2021-07-03 12:00:50] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/utils.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":13} []
+[2021-07-03 12:00:50] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/tooltip.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":14} []
+[2021-07-03 12:00:50] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/interactiveLayer.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":15} []
+[2021-07-03 12:00:50] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/models/axis.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":16} []
+[2021-07-03 12:00:50] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/models/line.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":17} []
+[2021-07-03 12:00:51] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/models/lineWithFocusChart.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":18} []
+[2021-07-03 12:00:51] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/mapplic/js/hammer.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":19} []
+[2021-07-03 12:00:51] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/mapplic/js/jquery.mousewheel.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":20} []
+[2021-07-03 12:00:51] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/mapplic/js/mapplic.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":21} []
+[2021-07-03 12:00:51] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/rickshaw/rickshaw.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":22} []
+[2021-07-03 12:00:51] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-metrojs/MetroJs.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":23} []
+[2021-07-03 12:00:51] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-sparkline/jquery.sparkline.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":24} []
+[2021-07-03 12:00:51] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/skycons/skycons.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":25} []
+[2021-07-03 12:00:51] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":26} []
+[2021-07-03 12:00:51] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/boostrap-form-wizard/js/jquery.bootstrap.wizard.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":27} []
+[2021-07-03 12:00:52] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/bootstrap-form-helpers/bootstrap-formhelpers.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":28} []
+[2021-07-03 12:00:52] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/offlex.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":29} []
+[2021-07-03 12:00:52] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/tables.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":30} []
+[2021-07-03 12:00:52] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/form_layouts.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":31} []
+[2021-07-03 12:00:52] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/form_wizard.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":32} []
+[2021-07-03 12:00:52] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/scripts.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":33} []
+[2021-07-03 12:00:52] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/favicon.png","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":34} []
+[2021-07-03 12:01:39] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/pace/pace-theme-flash.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":35} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/boostrapv3/css/bootstrap.min.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":35} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/switchery/css/switchery.min.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":35} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/mapplic/css/mapplic.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":35} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/font-awesome/css/font-awesome.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":35} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-scrollbar/jquery.scrollbar.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":35} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/rickshaw/rickshaw.min.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":35} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/bootstrap-select2/select2.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":35} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/nv.d3.min.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":35} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/bootstrap-datepicker/css/datepicker3.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":35} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-metrojs/MetroJs.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":36} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/css/bootstrap-combobox.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":36} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/css/offlex.css","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":36} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/offlex.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":36} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/pace/pace.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":37} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-ui/jquery-ui.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":37} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/boostrapv3/js/bootstrap.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":37} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-ios-list/jquery.ioslist.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":37} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-unveil/jquery.unveil.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":37} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/modernizr.custom.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":37} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery/jquery-easy.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":37} []
+[2021-07-03 12:01:40] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-bez/jquery.bez.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":37} []
+[2021-07-03 12:01:41] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-actual/jquery.actual.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":37} []
+[2021-07-03 12:01:41] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-scrollbar/jquery.scrollbar.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":37} []
+[2021-07-03 12:01:41] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/bootstrap-select2/select2.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":38} []
+[2021-07-03 12:01:41] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/classie/classie.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":38} []
+[2021-07-03 12:01:41] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-datatable/media/js/jquery.dataTables.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":38} []
+[2021-07-03 12:01:41] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/switchery/js/switchery.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":38} []
+[2021-07-03 12:01:41] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-datatable/extensions/Bootstrap/jquery-datatable-bootstrap.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":38} []
+[2021-07-03 12:01:41] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/nv.d3.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":38} []
+[2021-07-03 12:01:41] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/lib/d3.v3.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":38} []
+[2021-07-03 12:01:41] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/utils.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":39} []
+[2021-07-03 12:01:41] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/interactiveLayer.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":39} []
+[2021-07-03 12:01:41] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/tooltip.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":39} []
+[2021-07-03 12:01:41] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/models/axis.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":39} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/models/line.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":39} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/mapplic/js/hammer.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":39} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/mapplic/js/jquery.mousewheel.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":39} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/models/lineWithFocusChart.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":39} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/mapplic/js/mapplic.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":40} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-metrojs/MetroJs.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":40} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/rickshaw/rickshaw.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":40} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-sparkline/jquery.sparkline.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":40} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/skycons/skycons.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":40} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":40} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/boostrap-form-wizard/js/jquery.bootstrap.wizard.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":40} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/bootstrap-form-helpers/bootstrap-formhelpers.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":41} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/offlex.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":41} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/tables.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":41} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/logo/offlex_small.png","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":41} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/form_wizard.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":41} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/scripts.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":41} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/form_layouts.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":41} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/logo/offlex_large.png","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":41} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-ui/jquery-ui.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":41} []
+[2021-07-03 12:01:42] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/boostrapv3/js/bootstrap.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":42} []
+[2021-07-03 12:01:43] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery/jquery-easy.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":43} []
+[2021-07-03 12:01:43] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-unveil/jquery.unveil.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":44} []
+[2021-07-03 12:01:43] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-bez/jquery.bez.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":45} []
+[2021-07-03 12:01:43] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-ios-list/jquery.ioslist.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":46} []
+[2021-07-03 12:01:43] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-actual/jquery.actual.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":47} []
+[2021-07-03 12:01:43] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-scrollbar/jquery.scrollbar.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":48} []
+[2021-07-03 12:01:43] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/bootstrap-select2/select2.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":49} []
+[2021-07-03 12:01:43] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/classie/classie.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":50} []
+[2021-07-03 12:01:43] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/switchery/js/switchery.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":51} []
+[2021-07-03 12:01:43] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-datatable/media/js/jquery.dataTables.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":52} []
+[2021-07-03 12:01:44] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":53} []
+[2021-07-03 12:01:44] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-datatable/extensions/Bootstrap/jquery-datatable-bootstrap.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":54} []
+[2021-07-03 12:01:44] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/lib/d3.v3.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":55} []
+[2021-07-03 12:01:44] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/nv.d3.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":56} []
+[2021-07-03 12:01:44] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/utils.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":57} []
+[2021-07-03 12:01:44] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/tooltip.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":58} []
+[2021-07-03 12:01:44] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/interactiveLayer.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":59} []
+[2021-07-03 12:01:44] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/models/axis.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":60} []
+[2021-07-03 12:01:44] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/models/line.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":61} []
+[2021-07-03 12:01:44] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/nvd3/src/models/lineWithFocusChart.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":62} []
+[2021-07-03 12:01:45] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/mapplic/js/hammer.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":63} []
+[2021-07-03 12:01:45] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/mapplic/js/jquery.mousewheel.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":64} []
+[2021-07-03 12:01:45] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/mapplic/js/mapplic.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":65} []
+[2021-07-03 12:01:45] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/rickshaw/rickshaw.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":66} []
+[2021-07-03 12:01:45] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-metrojs/MetroJs.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":67} []
+[2021-07-03 12:01:45] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/jquery-sparkline/jquery.sparkline.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":68} []
+[2021-07-03 12:01:45] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/skycons/skycons.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":69} []
+[2021-07-03 12:01:45] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":70} []
+[2021-07-03 12:01:45] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/boostrap-form-wizard/js/jquery.bootstrap.wizard.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":71} []
+[2021-07-03 12:01:45] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/plugins/bootstrap-form-helpers/bootstrap-formhelpers.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":72} []
+[2021-07-03 12:01:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/offlex.min.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":73} []
+[2021-07-03 12:01:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/tables.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":74} []
+[2021-07-03 12:01:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/form_layouts.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":75} []
+[2021-07-03 12:01:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/form_wizard.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":76} []
+[2021-07-03 12:01:46] production.ERROR: 404 /var/www/html/offlex_base/bootstrap/compiled.php [Line 5295] => 
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/template/js/scripts.js","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":77} []
+[2021-07-03 13:03:16] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Exception/PlainDisplayer.php [Line 15] => Uncaught TypeError: Argument 1 passed to Illuminate\Exception\PlainDisplayer::display() must be an instance of Exception, instance of Error given, called in /var/www/html/offlex_base/bootstrap/compiled.php on line 8695 and defined in /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Exception/PlainDisplayer.php:15
+Stack trace:
+#0 /var/www/html/offlex_base/bootstrap/compiled.php(8695): Illuminate\Exception\PlainDisplayer->display(Object(Error))
+#1 /var/www/html/offlex_base/bootstrap/compiled.php(8647): Illuminate\Exception\Handler->displayException(Object(Error))
+#2 /var/www/html/offlex_base/bootstrap/compiled.php(8651): Illuminate\Exception\Handler->handleException(Object(Error))
+#3 [internal function]: Illuminate\Exception\Handler->handleUncaughtException(Object(Error))
+#4 {main}
+  thrown
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":78} []
+[2021-07-03 13:03:16] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Exception/PlainDisplayer.php [Line 15] => Uncaught TypeError: Argument 1 passed to Illuminate\Exception\PlainDisplayer::display() must be an instance of Exception, instance of Error given, called in /var/www/html/offlex_base/bootstrap/compiled.php on line 8695 and defined in /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Exception/PlainDisplayer.php:15
+Stack trace:
+#0 /var/www/html/offlex_base/bootstrap/compiled.php(8695): Illuminate\Exception\PlainDisplayer->display(Object(Error))
+#1 /var/www/html/offlex_base/bootstrap/compiled.php(8647): Illuminate\Exception\Handler->displayException(Object(Error))
+#2 /var/www/html/offlex_base/bootstrap/compiled.php(8651): Illuminate\Exception\Handler->handleException(Object(Error))
+#3 [internal function]: Illuminate\Exception\Handler->handleUncaughtException(Object(Error))
+#4 {main}
+  thrown
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/favicon.ico","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":78} []
+[2021-07-03 13:03:25] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Exception/PlainDisplayer.php [Line 15] => Uncaught TypeError: Argument 1 passed to Illuminate\Exception\PlainDisplayer::display() must be an instance of Exception, instance of Error given, called in /var/www/html/offlex_base/bootstrap/compiled.php on line 8695 and defined in /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Exception/PlainDisplayer.php:15
+Stack trace:
+#0 /var/www/html/offlex_base/bootstrap/compiled.php(8695): Illuminate\Exception\PlainDisplayer->display(Object(Error))
+#1 /var/www/html/offlex_base/bootstrap/compiled.php(8647): Illuminate\Exception\Handler->displayException(Object(Error))
+#2 /var/www/html/offlex_base/bootstrap/compiled.php(8651): Illuminate\Exception\Handler->handleException(Object(Error))
+#3 [internal function]: Illuminate\Exception\Handler->handleUncaughtException(Object(Error))
+#4 {main}
+  thrown
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/invoices","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":78} []
+[2021-07-03 13:03:25] production.ERROR: 500 /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Exception/PlainDisplayer.php [Line 15] => Uncaught TypeError: Argument 1 passed to Illuminate\Exception\PlainDisplayer::display() must be an instance of Exception, instance of Error given, called in /var/www/html/offlex_base/bootstrap/compiled.php on line 8695 and defined in /var/www/html/offlex_base/vendor/laravel/framework/src/Illuminate/Exception/PlainDisplayer.php:15
+Stack trace:
+#0 /var/www/html/offlex_base/bootstrap/compiled.php(8695): Illuminate\Exception\PlainDisplayer->display(Object(Error))
+#1 /var/www/html/offlex_base/bootstrap/compiled.php(8647): Illuminate\Exception\Handler->displayException(Object(Error))
+#2 /var/www/html/offlex_base/bootstrap/compiled.php(8651): Illuminate\Exception\Handler->handleException(Object(Error))
+#3 [internal function]: Illuminate\Exception\Handler->handleUncaughtException(Object(Error))
+#4 {main}
+  thrown
+ {"context":"PHP","user_id":1,"user_name":"Vincent van der Kolk","url":"http://kolkmedia.offlex/favicon.ico","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","ip":"172.18.0.2","count":78} []
