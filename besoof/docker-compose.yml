@@ -24,23 +24,23 @@ services:
         - VIRTUAL_PORT=80
       restart: unless-stopped  
 
-    db_offlex_besoof:
-      container_name: db_offlex_besoof
-      build:
-        context: .
-        dockerfile: ./database/Dockerfile
-      environment:
-        - MYSQL_ROOT_PASSWORD=root
-        - MYSQL_DATABASE=offlex
-        - MYSQL_ROOT_HOST=%
-      volumes:
-        - ./database/mysql_db:/var/lib/mysql
-        - ./docker/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
-      expose:
-        - 3306
-      ports:
-        - 33061:3306
-      restart: unless-stopped  
+    # db_offlex_besoof:
+    #   container_name: db_offlex_besoof
+    #   build:
+    #     context: .
+    #     dockerfile: ./database/Dockerfile
+    #   environment:
+    #     - MYSQL_ROOT_PASSWORD=root
+    #     - MYSQL_DATABASE=offlex
+    #     - MYSQL_ROOT_HOST=%
+    #   volumes:
+    #     - ./database/mysql_db:/var/lib/mysql
+    #     - ./docker/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    #   expose:
+    #     - 3306
+    #   ports:
+    #     - 33061:3306
+    #   restart: unless-stopped  
 
 networks:
   default:
