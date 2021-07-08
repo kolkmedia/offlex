@@ -12,6 +12,7 @@ RUN apt-get install -y libmcrypt-dev
 
 # install all the dependencies and enable PHP modules
 RUN apt-get install -y \
+      build-essential \
       procps \
       nano \
       git \
@@ -24,20 +25,15 @@ RUN apt-get install -y \
       supervisor \
       cron \
       libzip-dev \
-      libpng-dev \
-      libjpeg-dev \
+      libfreetype6-dev \
       libjpeg62-turbo-dev \
-    && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
-    && docker-php-ext-configure intl \
-    && docker-php-ext-install \
-      mcrypt \
-      gd \
-      pdo_mysql \
-      sockets \
-      intl \
-      opcache \
-      zip \
-    && rm -rf /tmp/* \
+      libpng-dev
+
+    RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
+    RUN docker-php-ext-install -j$(nproc) mcrypt zip sockets pdo_mysql gd bcmath intl opcache
+
+    RUN docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd
+    RUN rm -rf /tmp/* \
     && rm -rf /var/list/apt/* \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
@@ -77,6 +73,8 @@ RUN a2enmod ssl
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/ssl-cert-kolkmedia.offlex.key -out /etc/ssl/certs/ssl-cert-kolkmedia.offlex.pem -subj "/C=AT/ST=Vienna/L=Vienna/O=Security/OU=Development/CN=kolkmedia.offlex"
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+RUN for mod in rewrite headers; do a2enmod $mod; done && service apache2 restart
 
 # set working directory
 WORKDIR $APP_HOME
