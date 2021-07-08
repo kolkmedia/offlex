@@ -15,7 +15,7 @@ class OneClickInstall extends Migration {
     Schema::create('affiliates', function($table)
     {
       $table->increments('id');
-      $table->timestamps();
+      $table->nullableTimestamps();
       $table->softDeletes();
 
       $table->string('name');
@@ -28,7 +28,7 @@ class OneClickInstall extends Migration {
     Schema::create('licenses', function($table)
     {           
       $table->increments('id');
-      $table->timestamps();
+      $table->nullableTimestamps();
       $table->softDeletes();
       $table->unsignedInteger('affiliate_id');
 

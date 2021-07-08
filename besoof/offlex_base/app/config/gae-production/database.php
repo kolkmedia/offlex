@@ -1,19 +1,17 @@
 <?php
-
 return array(
-
 	'connections' => array(
-
 		'mysql' => array(
 	        'driver'    => 'mysql',
-	        'unix_socket' => getenv('PRODUCTION_CLOUD_SQL_INSTANCE'),
-	        'host'      => '',
-	        'database'  => getenv('PRODUCTION_DB_NAME'),
-	        'username'  => getenv('PRODUCTION_DB_USERNAME'),
-	        'password'  => getenv('PRODUCTION_DB_PASSWORD'),
-	        'charset'   => 'utf8',
-	        'collation' => 'utf8_unicode_ci',
-	        'prefix'    => '',
+			'host'      => getenv('DB_HOST'),
+            'port'      => getenv('DB_PORT'),
+			'database'  => getenv('DB_DATABASE'),
+			'username'  => getenv('DB_USERNAME'),
+			'password'  => getenv('DB_PASSWORD'),
+			'strict' 	=> getenv('DB_STRICT_MODE'),
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
 		),
 	),
 );

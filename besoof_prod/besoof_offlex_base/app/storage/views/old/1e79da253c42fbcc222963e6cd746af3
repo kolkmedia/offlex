@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <?php echo $__env->make('emails.view_action', ['link' => $invoiceLink, 'entityType' => $entityType], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+  <?php echo trans('texts.email_salutation', ['name' => $userName]); ?> <p/>
+
+  <?php echo trans("texts.notification_{$entityType}_viewed", ['amount' => $invoiceAmount, 'client' => $clientName, 'invoice' => $invoiceNumber]); ?> <p/>
+
+  <?php echo trans('texts.email_signature'); ?> <br/>
+  <?php echo trans('texts.email_from'); ?> <p/>
+  
+  <?php echo trans('texts.user_email_footer'); ?> <p/>
+
+</body>
+</html>

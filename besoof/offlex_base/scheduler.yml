@@ -2,7 +2,7 @@ SendRecurringInvoicesCron:
 	type: cron
 	script: htdocs/artisan
 	args:
-		- "offlex:send-invoices"
+		- "offlex_besoof:send-invoices"
 	interval:
 		minute: 0
 		hour: *

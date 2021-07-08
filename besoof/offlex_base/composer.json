@@ -1,14 +1,14 @@
 {
-	"name" : "offlex",
-	"description" : "An open-source invoicing site build with Laravel",
+	"name": "offlex_besoof/offlex_besoof",
+	"description": "An open-source invoicing site build with Laravel",
 	"keywords" : [
 		"invoice",
 		"laravel"
 	],
-	"license" : "Attribution Assurance License",
+	"license" : "proprietary",
 	"authors" : [{
-			"name" : "Kolkmedia",
-			"email" : "info@kolkmedia.com"
+			"name" : "besoof",
+			"email" : "info@besoof.com"
 		}
 	],
 	"require" : {
@@ -49,7 +49,7 @@
 			"vendor/php-payments/lib"
 		],
 		"psr-0" : {
-			"offlex" : "app/"
+			"offlex_besoof" : "app/"
 		}
 	},
 	"scripts" : {

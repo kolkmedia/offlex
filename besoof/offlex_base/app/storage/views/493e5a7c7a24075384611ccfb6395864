@@ -1,0 +1,158 @@
+
+<?php $__env->startSection('onReady'); ?>
+    $('input#name').focus();
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo Former::open_for_files($url)->addClass('container-fluid container-fixed-lg warn-on-exit')->method($method); ?>
+
+    <?php if ($expense): ?>
+        <?php echo Former::populate($expense); ?>
+    <?php endif; ?>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="invoice padding-30 sm-padding-10">
+                <div class="row">
+                    <div class="col-md-3 pull-left p-b-25">
+                        <?php echo Former::legend('enter_expense'); ?>
+                        <?php echo Former::text('expense_date')->data_date_format(Session::get(SESSION_DATE_PICKER_FORMAT))->append('<i class="glyphicon glyphicon-calendar"></i>'); ?>
+                        <?php echo Former::select('product_id')->addOption('','')->fromQuery($products, 'product_key', 'id')->class('full-width')->data_init_plugin("select2"); ?>
+                        <?php echo Former::select('category_id')->addOption('','')->fromQuery($categories, 'name', 'id')->class('full-width')->data_init_plugin("select2"); ?>
+                        <?php echo Former::select('client_id')->addOption('','')->fromQuery($clients, 'name', 'id')->class('full-width')->data_init_plugin("select2"); ?>
+                        <?php echo Former::text('name'); ?>
+                        <?php echo Former::textarea('description'); ?>
+                        <?php echo Former::text('amount'); ?>
+
+                        <?php echo Former::file('receipt')->max(2, 'MB')->accept('file')->inlineHelp(trans('texts.expense_help')); ?>
+
+                        <?php echo Button::btn_info_submit(trans('texts.save')); ?>
+                        <?php echo Button::btn_default_link('expenses/', trans('texts.cancel'));; ?>
+                    </div>
+                    <?php if ($expense): ?>
+                        <div class="col-md-4 pull-left p-b-25 p-t-50">
+                            <?php if ($expense->file_name !='' ): ?>
+                                <center>
+                                    <?php
+                                    $file = File::extension($expense->getFilePath());
+                                    $image = false;
+                                    $path = $expense->path .'/'. $expense->file_name;
+                                    $file = new Symfony\Component\HttpFoundation\File\File($path);
+                                    $mime = $file->getMimeType();
+                                    $isImage = str_contains($mime, 'image');
+                                    ?>
+                                    <?php if ($isImage): ?>
+                                        <?php $image = true; ?>
+                                    <?php endif; ?>
+                                    <?php if ($image): ?>
+                                        <a href="#"
+                                           onclick="showExpense()">
+                                            <?php echo HTML::image(URL::to('/files/' . $expense->public_id), "Declaratie", array( 'width' => 250, 'class' => 'panel panel-default' )); ?>
+                                        </a>
+                                        &nbsp;
+                                        <h5 class="all-caps hint-text"><?php echo $expense->file_name; ?></h5>
+                                        <button onclick="deleteFile('<?php echo $expense->public_id; ?>')"
+                                                class="btn-primary btn-sm btn"
+                                                type="button"><?php echo trans('texts.remove_file'); ?></button>
+                                        <button onclick="showExpense()" class="btn-primary btn-sm btn"
+                                                type="button">Bekijk
+                                        </button>
+                                    <?php else: ?>
+                                        <a href="/files/<?php echo $expense->public_id; ?>" target="_blank">
+                                            <h5 class="all-caps hint-text"><?php echo $expense->file_name; ?></h5>
+                                            <i class="pg-download" style="font-size:78px;"></i></br> downloaden </a>
+                                        </br></br>
+                                        <button onclick="deleteFile('<?php echo $expense->public_id; ?>')"
+                                                class="btn-primary btn-sm btn"
+                                                type="button"><?php echo trans('texts.remove_file'); ?></button>
+                                        <button onclick="showExpense()" class="btn-primary btn-sm btn"
+                                                type="button">Meer info
+                                        </button>
+                                    <?php endif; ?>
+                                </center><br/>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php if ($expense): ?>
+        <div class="modal fade" id="expenseModal" tabindex="-1" role="dialog" aria-labelledby="expenseModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header clearfix text-left">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="expenseModalLabel"><?php echo $expense->file_name; ?></h4>
+                    </div>
+                    </br>
+                    <div style="background-color: #fff" class="modal-body">
+                        <?php if ($expense->file_name !='' ): ?>
+                            <?php if ($image): ?>
+                                <?php echo HTML::image(URL::to('/files/' . $expense->public_id), "Declaratie", array( 'width' => '100%', 'class' => 'panel panel-default' )); ?>
+                            <?php else: ?>
+                                <a href="/files/<?php echo $expense->public_id; ?>" target="_blank"><?php echo $expense->file_name; ?></a>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                            </br> </br>
+                            Datum: <?php echo $expense->expense_date; ?></br>
+                            Naam: <?php echo $expense->name; ?></br>
+                            Omschrijving: <?php echo $expense->description; ?></br>
+                    </div>
+
+                    <div class="modal-footer" style="margin-top: 0px" id="changePasswordFooter">
+                        <button type="button" class="btn btn-default" id="cancelChangePasswordButton"
+                                data-dismiss="modal">
+                            Sluiten
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php echo Former::close(); ?>
+
+    <?php if ($expense): ?>
+        <?php echo Form::open(['url' => 'expenses/' . $expense->public_id . '/remove_file', 'class' => 'removeFileForm']); ?>
+        <?php echo Form::close(); ?>
+    <?php endif; ?>
+
+    <script type="text/javascript">
+
+        var invoices = <?php echo $invoices; ?>;
+        var clients = <?php echo $clients; ?>;
+        var products = <?php echo $products; ?>;
+        var categories = <?php echo $categories; ?>;
+
+        function submitForm(action) {
+            if (action == 'deleteFile') {
+                if (!confirm('<?php echo trans('texts.are_you_sure'); ?>')) {
+                    return;
+                }
+            }
+
+            $('#action').val(action);
+            $('.removeFileForm').submit();
+        }
+
+        function deleteFile(id) {
+            $('#id').val(id);
+            submitForm('deleteFile');
+        }
+
+        function showExpense() {
+            $('#expenseModal').modal('show');
+        }
+        $(function () {
+            <?php if ($expense): ?>
+            	$('#expense_date').datepicker('update', '<?php echo $expense->expense_date; ?>')
+            <?php else: ?>
+            	$('#expense_date').datepicker('update', new Date());
+            <?php endif; ?>
+
+        });
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.template-header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

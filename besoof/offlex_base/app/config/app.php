@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => '',
+	'url' => 'https://besoof.offlex',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -67,7 +67,8 @@ return array(
 	| cat /dev/random | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
 	*/
 
-	'key' => 'BAjxdhPtPs73vy1S9T23PJDKSXdWwJE4',
+	'key' => 'pV9E6mV8sUjHgxcCtQoJgXC46pZcTTRw',
+	// 'key' => getenv('APP_KEY'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -200,7 +201,7 @@ return array(
 		'Form'            => 'Bootstrapper\Form',
 		'Helpers'         => 'Bootstrapper\Helpers',
 		'Icon'            => 'Bootstrapper\Icon',
-		//'Image'           => 'Bootstrapper\Image',
+		'Image'           => 'Bootstrapper\Image',
 		'Label'           => 'Bootstrapper\Label',
 		'MediaObject'     => 'Bootstrapper\MediaObject',
 		'Navbar'          => 'Bootstrapper\Navbar',

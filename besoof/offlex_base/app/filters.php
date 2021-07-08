@@ -13,12 +13,14 @@
 
 App::before(function($request)
 {
+  Request::setTrustedProxies( [ $request->getClientIp() ] );
+
   // Ensure all request are over HTTPS in production
   if (App::environment() == ENV_PRODUCTION)
   {
     if (!Request::secure()) 
     {
-      return Redirect::secure(Request::getRequestUri());      
+      return Redirect::secure(Request::getRequestUri());  
     }
   }
 
@@ -99,7 +101,7 @@ App::before(function($request)
     $licenseKey = Input::get('license_key');
     $productId = Input::get('product_id');
 
-    $data = trim(file_get_contents((Utils::isOfflexDev() ? 'http://www.offlex.nl' : OFFLEX_APP_URL) . "/claim_license?license_key={$licenseKey}&product_id={$productId}"));
+    $data = trim(file_get_contents((Utils::isOfflexDev() ? 'https://besoof.offlex' : OFFLEX_APP_URL) . "/claim_license?license_key={$licenseKey}&product_id={$productId}"));
 
     if ($productId == PRODUCT_INVOICE_DESIGNS)
     {
@@ -139,6 +141,15 @@ App::before(function($request)
 App::after(function($request, $response)
 {
 	//
+});
+
+Route::filter('force.ssl', function()
+{
+    if( ! Request::secure())
+    {
+        return Redirect::secure(Request::path());
+    }
+
 });
 
 /*

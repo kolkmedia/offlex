@@ -23,7 +23,7 @@ class Quarters extends Migration {
 			$t->date ( 'quarter_date_start' )->nullable ();
 			$t->date ( 'quarter_date_end' )->nullable ();
 				
-			$t->timestamps ();
+			$t->nullableTimestamps ();
 			$t->softDeletes ();
 				
 			$t->unsignedInteger ( 'public_id' )->index ();

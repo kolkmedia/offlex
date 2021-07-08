@@ -17,7 +17,7 @@ class AddZapierSupport extends Migration {
       $table->increments('id');
       $table->unsignedInteger('account_id')->nullable();
 
-      $table->timestamps();
+      $table->nullableTimestamps();
       $table->softDeletes();
 
       $table->unsignedInteger('event_id')->nullable();

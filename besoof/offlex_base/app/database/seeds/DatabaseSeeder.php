@@ -11,6 +11,12 @@ class DatabaseSeeder extends Seeder {
 	{
 		$this->command->info('Running DatabaseSeeder');
 
+
+        if (Timezone::count()) {
+            $this->command->info('Skipping: already run');
+            return;
+        }
+
 		Eloquent::unguard();
 
 		$this->call('UserTableSeeder');

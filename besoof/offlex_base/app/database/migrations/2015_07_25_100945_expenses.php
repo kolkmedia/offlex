@@ -26,7 +26,7 @@ class expenses extends Migration {
 				$t->string ( 'path' )->nullable ();
 				$t->string ( 'file_name')->nullable ();
 					
-				$t->timestamps ();
+				$t->nullableTimestamps ();
 				$t->softDeletes ();
 					
 				$t->boolean ( 'is_deleted' )->default ( false );

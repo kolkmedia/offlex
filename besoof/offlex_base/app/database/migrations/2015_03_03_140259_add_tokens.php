@@ -17,7 +17,7 @@ class AddTokens extends Migration {
             $table->increments('id');
             $table->unsignedInteger('account_id')->index();
             $table->unsignedInteger('user_id');
-            $table->timestamps();
+            $table->nullableTimestamps();
             $table->softDeletes();
 
             $table->string('name')->nullable();

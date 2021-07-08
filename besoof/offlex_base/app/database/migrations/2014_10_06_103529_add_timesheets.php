@@ -17,7 +17,7 @@ class AddTimesheets extends Migration {
             $t->unsignedInteger('user_id');
             $t->unsignedInteger('account_id')->index();
             $t->unsignedInteger('client_id')->nullable();
-            $t->timestamps();
+            $t->nullableTimestamps();
             $t->softDeletes();
 
             $t->string('name');
@@ -34,7 +34,7 @@ class AddTimesheets extends Migration {
             $t->unsignedInteger('user_id');
             $t->unsignedInteger('account_id')->index();
             $t->unsignedInteger('project_id');
-            $t->timestamps();
+            $t->nullableTimestamps();
             $t->softDeletes();
 
             $t->string('name');
@@ -52,7 +52,7 @@ class AddTimesheets extends Migration {
             $t->increments('id');
             $t->unsignedInteger('user_id');
             $t->unsignedInteger('account_id')->index();
-            $t->timestamps();
+            $t->nullableTimestamps();
             $t->softDeletes();
                        
             $t->dateTime('start_date');
@@ -72,7 +72,7 @@ class AddTimesheets extends Migration {
             $t->increments('id');
             $t->unsignedInteger('user_id');
             $t->unsignedInteger('account_id')->index();
-            $t->timestamps();
+            $t->nullableTimestamps();
             $t->softDeletes();
             
             $t->string('owner');
@@ -95,7 +95,7 @@ class AddTimesheets extends Migration {
             $t->unsignedInteger('timesheet_id')->nullable()->index();
             $t->unsignedInteger('project_id')->nullable()->index();
             $t->unsignedInteger('project_code_id')->nullable()->index();            
-            $t->timestamps();
+            $t->nullableTimestamps();
             $t->softDeletes();
             
             // Basic fields
@@ -114,9 +114,9 @@ class AddTimesheets extends Migration {
             
             // Original data
             $t->string('org_code');
-            $t->timeStamp('org_created_at');
-            $t->timeStamp('org_updated_at');
-            $t->timeStamp('org_deleted_at')->default('0000-00-00T00:00:00');
+            $t->timeStamp('org_created_at')->nullable();
+            $t->timeStamp('org_updated_at')->nullable();
+            $t->timeStamp('org_deleted_at')->nullable();
             $t->string('org_start_date_timezone')->nullable();
             $t->string('org_end_date_timezone')->nullable();
             $t->text('org_data');
@@ -125,7 +125,7 @@ class AddTimesheets extends Migration {
             $t->string('import_error')->nullable();
             $t->string('import_warning')->nullable();
             $t->text('updated_data')->nullable();
-            $t->timeStamp('updated_data_at')->default('0000-00-00T00:00:00');
+            $t->timeStamp('updated_data_at')->nullable();
             
             $t->foreign('account_id')->references('id')->on('accounts'); 
             $t->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

@@ -12,7 +12,7 @@ settings:
 modules:
     config:
         Db:
-            dsn: 'mysql:host=localhost;dbname=offlex'
+            dsn: 'mysql:host=localhost;dbname=offlex_besoof'
             user: 'offlex'
             password: 'offlex'
             dump: tests/_data/dump.sql

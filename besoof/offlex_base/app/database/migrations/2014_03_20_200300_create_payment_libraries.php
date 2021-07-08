@@ -17,7 +17,7 @@ class CreatePaymentLibraries extends Migration {
     Schema::create('payment_libraries', function($t)
     {
         $t->increments('id');
-        $t->timestamps();
+        $t->nullableTimestamps();
 
         $t->string('name');
         $t->boolean('visible')->default(true);

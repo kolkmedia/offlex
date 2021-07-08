@@ -1,5 +1,5 @@
 <?php return array (
-  'url' => 'http://www.offlex.nl',
-  'key' => 'ThLEKv5JP8Y0zvCWnrOCfcwXEJvjLj2h',
-  'debug' => false,
+  'url'   => 'https://besoof.offlex',
+  'key'   => 'pV9E6mV8sUjHgxcCtQoJgXC46pZcTTRw',
+  'debug' => true,
 );

@@ -32,7 +32,7 @@ return [
     'free_always_text' => 'Send unlimited invoices to 500 clients per month and never pay a dime. You are welcome to unlock still more awesome features with our Pro Plan, but our free app is a top-notch product that will do everything you need it to do, without any subscription or fees.',
 
     'open_source' => 'Open-Source',
-    'open_source_text' => 'No mysterious corporate silos here! Just full <a href="https://github.com/kolkmedia/offlex" target="_blank">source code</a> transparency and a devotion to working with anyone interested to build a better electronic invoicing platform. We even offer a handy <a href="http://kolkmedia.com/offlex/self-hosting/" target="_blank">zip download</a> for a self-hosted version of Offlex.',
+    'open_source_text' => 'No mysterious corporate silos here! Just full <a href="https://github.com/besoof/offlex" target="_blank">source code</a> transparency and a devotion to working with anyone interested to build a better electronic invoicing platform. We even offer a handy <a href="http://besoof.com/offlex/self-hosting/" target="_blank">zip download</a> for a self-hosted version of Offlex.',
 
     'live_pdf' => 'Live .PDF View',
     'live_pdf_text' => 'See how your edited invoice will look as a print-friendly pdf while you make the changes. Our pdf generator works in real time as you make your changes. You can even preview four beautiful preset designs. Just create, save, send, and you’re done!',
@@ -55,7 +55,7 @@ return [
     'marketing' => 'Marketing',
 
     'shalom_bio' => 'Shalom has specialized in small business development for nearly 10 years. In addition to Offlex.com Shalom is CEO of a leading tour agency in Israel.',
-    'hillel_bio' => 'Hillel has been developing enterprise applications for 15 years. His open-source <a href="http://kolkmedia.com/flex-autocomplete/" target="_blank">AutoComplete</a> component has been used by thousands of developers around the world.',
+    'hillel_bio' => 'Hillel has been developing enterprise applications for 15 years. His open-source <a href="http://besoof.com/flex-autocomplete/" target="_blank">AutoComplete</a> component has been used by thousands of developers around the world.',
     'razi_bio' => 'Razi is a pixel nerd with a great deal of experience in design for web sites and applications. When she isn\'t busy with Offlex she runs a small web agency in Stockholm called kantorp-wegl.in',
     'ben_bio' => 'A veteran digital marketer and content strategist, Ben specializes in building communities around brands that make business easier for freelancers, SMBs and micro-entrepreneurs.',    
   ],
@@ -192,7 +192,7 @@ return [
     'answer11' => 'Sure, <a href="https://www.offlex.com/demo">click here</a> to try out our demo account.',
 
     'question12' => 'I hear that there\'s a version of Offlex that I can install myself on my own servers? Where can I learn more about this?',
-    'answer12' => 'The rumors are true! Full instructions are available <a href="http://kolkmedia.com/offlex/self-hosting/" target="_blank">here</a>.',
+    'answer12' => 'The rumors are true! Full instructions are available <a href="http://besoof.com/offlex/self-hosting/" target="_blank">here</a>.',
 
     'question13' => 'I\'m seeing the options to assign various statuses to my invoices, clients, credits and payments. What\'s the difference between "active," "archived" and "deleted"?',
     'answer13' => 'These three handy statuses for invoices, clients, credits and payments allow you to keep your own cash flow management as straightforward and accessible as possible from your Offlex dashboard. None of these statuses will actually purge any records from your account - even "deleted" can always be recovered at any point in the future. "Active" means the record will appear in the relevant queue of records. To stash a record away so it\'s still fully operational but no longer cluttering up your interface, simply set it to be "archived." To deactivate a record and render it inaccessible to your clients, mark it "deleted."',

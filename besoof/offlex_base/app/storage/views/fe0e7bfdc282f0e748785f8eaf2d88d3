@@ -1,0 +1,14 @@
+
+<?php $__env->startSection('content'); ?>
+	<ul class="nav nav-tabs nav-tabs-fillup">
+  	<?php echo HTML::nav_link('company/details', 'company_details', 'details'); ?>
+    <?php /*<?php echo HTML::nav_link('company/payments', 'online_payments', 'gateways'); ?>*/ ?>
+    <?php echo HTML::nav_link('company/products', 'product_library', 'products'); ?>
+  	<?php echo HTML::nav_link('company/notifications', 'notifications', 'notifications'); ?>
+    <?php echo HTML::nav_link('company/import_export', 'import_export','import_export', 'company/import_map'); ?>
+  	<?php echo HTML::nav_link('company/advanced_settings/invoice_settings', 'advanced_settings' ,'advanced_settings', '*/advanced_settings/*'); ?>
+  	<?php echo HTML::nav_link('extra/categories', 'tax_settings' ,'categories', '*/categories/*'); ?>
+	</ul>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.template-header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

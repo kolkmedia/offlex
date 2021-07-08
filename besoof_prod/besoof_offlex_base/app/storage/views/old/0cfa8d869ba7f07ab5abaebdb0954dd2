@@ -1,0 +1,10 @@
+<ul class="nav nav-tabs nav-tabs-simple">
+    <?php echo HTML::nav_link_sub('company/advanced_settings/invoice_settings', 'invoice_settings','invoice_settings'); ?>
+    <?php echo HTML::nav_link_sub('company/advanced_settings/invoice_design', 'invoice_design','invoice_design'); ?>
+    <?php echo HTML::nav_link_sub('company/advanced_settings/email_templates', 'email_templates','email_templates'); ?>
+    <?php echo HTML::nav_link_sub('company/advanced_settings/chart_builder', 'chart_builder','chart_builder'); ?>
+    <?php echo HTML::nav_link_sub('company/advanced_settings/user_management', 'users_and_tokens','user'); ?>
+    <?php echo HTML::nav_link_sub('company/advanced_settings/token_management', 'token_management','token'); ?>
+</ul>
+<p>&nbsp;</p>
+

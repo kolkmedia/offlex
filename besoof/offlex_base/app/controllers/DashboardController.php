@@ -8,6 +8,7 @@ class DashboardController extends \BaseController
         $select = DB::raw('COUNT(DISTINCT CASE WHEN invoices.id IS NOT NULL THEN clients.id ELSE null END) billed_clients,
                         SUM(CASE WHEN invoices.invoice_status_id >= '.INVOICE_STATUS_SENT.' THEN 1 ELSE 0 END) invoices_sent,
                         COUNT(DISTINCT clients.id) active_clients');
+                        
         $metrics = DB::table('accounts')
             ->select($select)
             ->leftJoin('clients', 'accounts.id', '=', 'clients.account_id')

@@ -1,0 +1,69 @@
+
+<?php $__env->startSection('content'); ?>
+    <div class="login-container bg-white">
+        <div class="p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40">
+            <img class="overlay-brand" src="<?php echo asset('/logo/offlex_large.png'); ?>" alt="logo"
+                 data-src="<?php echo asset('/logo/offlex_large.png'); ?>"
+                 data-src-retina="<?php echo asset('/logo/offlex_large.png'); ?>" width="90" height="auto">
+
+            <p class="p-t-35"><?php echo trans('texts.password_recovery'); ?></p>
+            <?php echo Former::open('forgot_password')->rules(['email' => 'required|email'])->addClass('p-t-15'); ?>
+
+            <div class="form-group form-group-default required" aria-required="true">
+                <label><?php echo trans('texts.email_address'); ?></label>
+                <div class="controls">
+                    <?php echo Former::text('email')->placeholder(trans('texts.email_address'))->raw(); ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <?php if (Session::has('warning')): ?>
+                        <div class="alert alert-warning" role="alert">
+                            <button class="close" data-dismiss="alert"></button>
+                            <?php echo Session::get('warning'); ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if (Session::has('message')): ?>
+                        <div class="alert alert-info" role="alert">
+                            <button class="close" data-dismiss="alert"></button>
+                            <?php echo Session::get('message'); ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if (Session::has('error')): ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button class="close" data-dismiss="alert"></button>
+                            <?php echo Session::get('error'); ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <?php echo Button::success_submit(trans('texts.send_email'), array('class' => 'btn btn-complete btn-cons m-t-10'))->block(); ?>
+            <?php echo Former::close(); ?>
+
+            <a href="<?php echo URL::previous(); ?>" class="btn btn-info btn-cons m-t-10">Terug</a>
+
+        </div>
+    </div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('bg'); ?>
+    <video autoplay="true" preload="always" class="lazy">
+        <source src="<?php echo asset('/template/video/video.webm'); ?>" type="video/webm">
+        <source src="<?php echo asset('/template/video/video.mp4'); ?>" type="video/mp4">
+    </video>
+    <div class="bg-caption pull-bottom sm-pull-bottom text-white p-l-20 m-b-20">
+        <h2 class="text-white">
+            <img class="overlay-brand" src="<?php echo asset('/logo/offlex_large.png'); ?>" alt="logo"
+                 data-src="<?php echo asset('/logo/offlex_large.png'); ?>"
+                 data-src-retina="<?php echo asset('/logo/offlex_large.png'); ?>" width="90" height="auto">
+
+        </h2>
+
+        <p class="small text-bg">
+            <?php echo trans('texts.app_title'); ?>
+        </p>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.template-header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

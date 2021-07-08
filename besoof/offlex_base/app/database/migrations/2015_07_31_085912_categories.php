@@ -21,7 +21,7 @@ class Categories extends Migration {
 			$t->string ( 'name' );
 			$t->string ( 'description' )->nullable ();
 				
-			$t->timestamps ();
+			$t->nullableTimestamps ();
 			$t->softDeletes ();
 				
 			$t->unsignedInteger ( 'public_id' )->index ();

@@ -393,12 +393,12 @@ define('DEMO_ACCOUNT_ID', 'DEMO_ACCOUNT_ID');
 define('OFFLEX_ACCOUNT_KEY', 'zg4ylmzDkdkPOT8yoKQw9LTWaoZJx79h');
 define('OFFLEX_GATEWAY_ID', GATEWAY_AUTHORIZE_NET);
 define('OFFLEX_GATEWAY_CONFIG', '{"apiLoginId":"626vWcD5","transactionKey":"4bn26TgL9r4Br4qJ","testMode":"","developerMode":""}');
-define('OFFLEX_WEB_URL', 'http://www.offlex.nl');
-define('OFFLEX_APP_URL', 'https://app.offlex.nl');
+define('OFFLEX_WEB_URL', 'https://besoof.offlex');
+define('OFFLEX_APP_URL', 'https://app.besoof.offlex');
 define('OFFLEX_VERSION', '1.0');
 define('OFFLEX_DATE', '2000-01-01');
 define('OFFLEX_FROM_EMAIL', 'offlex@offlex.nl');
-define('RELEASES_URL', 'https://github.com/kolkmedia/offlex/releases/');
+define('RELEASES_URL', 'https://github.com/besoof/offlex/releases/');
 
 define('COUNT_FREE_DESIGNS', 4);
 define('PRODUCT_ONE_CLICK_INSTALL', 1);

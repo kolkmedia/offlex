@@ -1,34 +1,31 @@
 version: '3'
 
 services:
-
-    webserver_offlex: &laravel-template
-      image: webserver_offlex:latest
+    webserver_offlex_besoof: &laravel-template
+      image: webserver_offlex_besoof:latest
+      container_name: webserver_offlex_besoof
       build:
         context: .
         dockerfile: ./Dockerfile
-      container_name: webserver_offlex
       expose:
         - 80
-        - 443
-      ports:
-        - 80:80
-        - 443:443
       volumes:
         - .:/var/www/html:delegated
-        - ./offlex-besoof/kolkmedia/offlex_base:/var/www/html/offlex_base
-        - ./offlex-besoof/kolkmedia/public_html:/var/www/html/public_html
+        - ./offlex_base:/var/www/html/offlex_base
+        - ./public_html:/var/www/html/public_html
       depends_on:
-        - db_offlex
+        - db_offlex_besoof
       links:
-        - db_offlex
+        - db_offlex_besoof
       environment:
         - DB_PORT=33061
-        - DB_HOST=db_offlex
+        - DB_HOST=db_offlex_besoof
+        - VIRTUAL_HOST=besoof.offlex
+        - VIRTUAL_PORT=80
+      restart: unless-stopped  
 
-    db_offlex:
-      container_name: db_offlex
-      #command: --default-authentication-plugin=mysql_native_password
+    db_offlex_besoof:
+      container_name: db_offlex_besoof
       build:
         context: .
         dockerfile: ./database/Dockerfile
@@ -43,3 +40,9 @@ services:
         - 3306
       ports:
         - 33061:3306
+      restart: unless-stopped  
+
+networks:
+  default:
+    external: true
+    name: nginx-proxy

@@ -24,11 +24,11 @@
     <meta name="csrf-token" content="<?= csrf_token() ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link href="{{ asset('favicon.png') }}" rel="shortcut icon">
+    <link href="{{ secure_asset('favicon.png') }}" rel="shortcut icon">
 
     {{--FONTS--}}
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic' rel='stylesheet'
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic' rel='stylesheet'
           type='text/css'>
 
     {{-- PLUGIN CSS--}}
@@ -43,7 +43,7 @@
     <link href="{{ $plugins}}/rickshaw/rickshaw.min.css" rel="stylesheet" type="text/css"/>
     <link href="{{ $plugins}}/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" type="text/css" media="screen">
     <link href="{{ $plugins}}/jquery-metrojs/MetroJs.css" rel="stylesheet" type="text/css" media="screen"/>
-    <link href="{{ asset('css/bootstrap-combobox.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{ secure_asset('css/bootstrap-combobox.css')}}" rel="stylesheet" type="text/css"/>
 
     {{--PAGE CSS--}}
     <link href="{{ $css}}/offlex-icons.css" rel="stylesheet" type="text/css">
@@ -58,7 +58,7 @@
     <![endif]-->
 
     {{--OFFLEX SPECIFIC--}}
-    <script src="{{ asset('offlex.js')}}?no_cache={{ OFFLEX_VERSION }}" type="text/javascript"></script>
+    <script src="{{ secure_asset('offlex.js')}}?no_cache={{ OFFLEX_VERSION }}" type="text/javascript"></script>
 
     @if (Auth::check())
         @include('layouts.includes.include-page-scripts')
@@ -71,9 +71,9 @@
             <!-- BEGIN SIDEBAR MENU TOP TRAY CONTENT-->
             <div class="sidebar-header">
                 <a href="{{ URL::to(OFFLEX_WEB_URL) }}">
-                    <img src="{{ asset('/logo/offlex_small.png')}}" alt="logo"
-                         data-src="{{ asset('/logo/offlex_small.png')}}"
-                         data-src-retina="{{ asset('/logo/offlex_small.png')}}" width="90" height="auto">
+                    <img src="{{ secure_asset('/logo/offlex_small.png')}}" alt="logo"
+                         data-src="{{ secure_asset('/logo/offlex_small.png')}}"
+                         data-src-retina="{{ secure_asset('/logo/offlex_small.png')}}" width="90" height="auto">
                 </a>
 
                 <div class="sidebar-header-controls">
@@ -113,9 +113,9 @@
                 <div class="header-inner">
                     <div class="brand inline">
                         <a href="{{ URL::to(OFFLEX_WEB_URL) }}">
-                            <img src="{{ asset('/logo/offlex_large.png')}}" alt="logo"
-                                 data-src="{{ asset('/logo/offlex_large.png')}}"
-                                 data-src-retina="{{ asset('/logo/offlex_large.png')}}" width="90" height="auto">
+                            <img src="{{ secure_asset('/logo/offlex_large.png')}}" alt="logo"
+                                 data-src="{{ secure_asset('/logo/offlex_large.png')}}"
+                                 data-src-retina="{{ secure_asset('/logo/offlex_large.png')}}" width="90" height="auto">
                         </a>
                     </div>
                     <ul class="notification-list no-margin hidden-sm hidden-xs b-grey b-l b-r no-style p-l-30 p-r-20">
@@ -203,10 +203,10 @@
             <div class="copyright sm-text-center">
                 <p class="small no-margin pull-left sm-pull-reset">
                     <span>
-                        <a href="https://www.offlex.nl/" target="_blank">offlex</a> - een product van <a
-                                href="http://wwww.kolkmedia.com">kolkmedia</a> - alle rechten voorbehouden | <a
+                        <a href="https://besoof.offlex/" target="_blank">offlex</a> - een product van <a
+                                href="http://wwww.besoof.com">besoof</a> - alle rechten voorbehouden | <a
                                 href="mailto:info@offlex.nl">info@offlex
-                            .nl</a> | <a href="mailto:info@kolkmedia.com">info@kolkmedia.com</a>
+                            .nl</a> | <a href="mailto:info@besoof.com">info@besoof.com</a>
                     </span>
                 </p>
 
@@ -526,9 +526,9 @@
         <div class="overlay hide" data-pages="search">
             <div class="overlay-content has-results m-t-20">
                 <div class="container-fluid">
-                    <img class="overlay-brand" src="{{ asset('/logo/offlex_large.png')}}" alt="logo"
-                         data-src="{{ asset('/logo/offlex_large.png')}}"
-                         data-src-retina="{{ asset('/logo/offlex_large.png')}}" width="90" height="auto">
+                    <img class="overlay-brand" src="{{ secure_asset('/logo/offlex_large.png')}}" alt="logo"
+                         data-src="{{ secure_asset('/logo/offlex_large.png')}}"
+                         data-src-retina="{{ secure_asset('/logo/offlex_large.png')}}" width="90" height="auto">
                     <a href="#" class="close-icon-light overlay-close text-black fs-16">
                         <i class="pg-close"></i>
                     </a>

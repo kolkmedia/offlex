@@ -222,6 +222,8 @@ class Handler {
 	 */
 	protected function callCustomHandlers($exception, $fromConsole = false)
 	{
+		echo $exception;
+		return $exception;
 		foreach ($this->handlers as $handler)
 		{
 			// If this exception handler does not handle the given exception, we will just

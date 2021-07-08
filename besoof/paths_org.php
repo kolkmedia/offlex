@@ -52,6 +52,6 @@ return array(
 	|
 	*/
 
-	'storage' => (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'], 'Google App Engine') !== false) ? "gs://offlex/storage" : __DIR__.'/../app/storage',
+	'storage' => (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'], 'Google App Engine') !== false) ? "gs://offlex_besoof/storage" : __DIR__.'/../app/storage',
 
 );

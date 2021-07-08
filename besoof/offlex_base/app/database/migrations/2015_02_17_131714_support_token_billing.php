@@ -26,7 +26,7 @@ class SupportTokenBilling extends Migration {
             $table->unsignedInteger('client_id');
             $table->string('token');
 
-            $table->timestamps();
+            $table->nullableTimestamps();
             $table->softDeletes();
 
             $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
